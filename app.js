@@ -19,6 +19,14 @@ app.use('/api', urlsRouter);
 
 // Server Setup
 const PORT = process.env.PORT || 3333;
+// Add this right before app.listen():
+app.get('/', (req, res) => {
+  res.json({ message: 'URL Shortener API is running!' });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
 app.listen(PORT, () => {
   console.log(`Server is running at PORT ${PORT}`);
 });
