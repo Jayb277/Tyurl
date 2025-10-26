@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const UrlSchema = new mongoose.Schema({
-  urlId: {
+  urlCode: {
     type: String,
     required: true,
   },
